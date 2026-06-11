@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export async function webSearch(query) {
+  console.log("TAVILY KEY:", process.env.TAVILY_API_KEY ? "exists" : "MISSING");
+  console.log("KEY LENGTH:", process.env.TAVILY_API_KEY?.length);
   const res = await axios.post(
      "https://api.tavily.com/search",
      {query , max_results: 5},
