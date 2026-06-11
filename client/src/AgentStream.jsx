@@ -93,7 +93,7 @@ export const AgentStream = ({ events, running }) => {
           ))}
           <style>{`@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}`}</style>
           <span style={{ fontSize: 13, color: "#888", fontStyle: "italic" }}>
-            ☕Our Free tier agents at work... grab a coffee, this takes 1-3 mins.
+            ☕Our Free tier agents are at work... grab a coffee, this takes 1-3 mins.
           </span>
         </div>
       )}
