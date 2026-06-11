@@ -6,6 +6,6 @@ export const runOrchestrator = async (userQuery , emit) => {
   const subTopics = await runPlanner(userQuery);
   emit({type:"topics" , topics:subTopics});
   const results = await Promise.all(subTopics.map((e) => runResearcher(e)));
-  const report = runWriter(results);
+  const report = await runWriter(results);
   emit({type:"final" , text:report});
 };

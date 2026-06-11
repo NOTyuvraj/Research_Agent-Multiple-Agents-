@@ -27,6 +27,7 @@ export const runWriter = async (results) => {
   ];
   const response = await callWriter(messages);
   const message = response.choices[0].message;
+  console.log("writer raw response:", message.content);
   const content = message.content;
-  return content.replace(/<think>[\s\S]*?<\/think>/g,"").trim();
+  return content.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
 };
