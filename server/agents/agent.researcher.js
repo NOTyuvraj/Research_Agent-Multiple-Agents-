@@ -47,7 +47,7 @@ const callResearcher = async (messages, tools, toolChoice = "auto" , retries = 5
   for (let i = 0; i < retries; i++) {
     try {
       return await groq.chat.completions.create({
-        model: "meta-llama/llama-4-scout-17b-16e-instruct",
+        model: "llama-3.3-70b-versatile",
         messages,
         tools,
         tool_choice: toolChoice,
