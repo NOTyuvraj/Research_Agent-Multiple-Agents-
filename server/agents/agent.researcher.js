@@ -54,7 +54,7 @@ const callResearcher = async (messages, tools, toolChoice = "auto" , retries = 5
       });
     } catch (err) {
       if (i === retries - 1) throw err;
-      const wait = err.status === 429 ? 10000 * (i + 1) : 1000 * (i + 1);
+      const wait = err.status === 429 ? 10000 * (i + 1) : 3000 * (i + 1);
       await new Promise((r) => setTimeout(r, wait));
     }
   }
