@@ -48,7 +48,7 @@ const callResearcher = async (messages, tools, toolChoice = "auto" , retries = 5
     try {
       console.log("Calling Groq with key:", process.env.GROQ_API_KEY?.slice(0, 7));
       return await groq.chat.completions.create({
-        model: "llama-3.3-70b-versatile",
+        model: "meta-llama/llama-4-scout-17b-16e-instruct",
         messages,
         tools,
         tool_choice: toolChoice,
