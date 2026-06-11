@@ -28,6 +28,7 @@ app.post("/query", async (req, res) => {
   try {
     await runOrchestrator(query, emit);
   } catch (err) {
+    console.error("Orchestrator error:", err.message);
     emit({ type: "error", text: err.message });
   } finally {
     res.end();
