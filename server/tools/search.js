@@ -2,18 +2,21 @@ import axios from "axios";
 
 export async function webSearch(query) {
   try {
-    const res = await axios.post(
-      "https://api.tavily.com/search",
-      { query, max_results: 5 },
-      { headers: { "x-api-key": process.env.TAVILY_API_KEY } }
-    );
-    return JSON.stringify(res.data.results.map((r) => ({
+    const res = await axios.get("https://serpapi.com/search", {
+      params: {
+        q: query,
+        api_key: process.env.SERP_API_KEY,
+        engine: "google",
+        num: 5,
+      },
+    });
+    return JSON.stringify(res.data.organic_results.map((r) => ({
       title: r.title,
-      url: r.url,
-      snippet: r.content,
+      url: r.link,
+      snippet: r.snippet,
     })));
   } catch (err) {
-    console.error("Tavily error:", err.response?.data);
+    console.error("SerpApi error:", err.response?.data);
     throw err;
   }
 }
