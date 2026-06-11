@@ -1,5 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config();
+
+console.log("GROQ KEY EXISTS:", !!process.env.GROQ_API_KEY);
+console.log("GROQ KEY PREFIX:", process.env.GROQ_API_KEY?.slice(0, 7));
 import express from "express";
 import cors from "cors";
 import { runOrchestrator } from "./orchestrator.js";

@@ -46,6 +46,7 @@ const executeTool = async (name, args) => {
 const callResearcher = async (messages, tools, toolChoice = "auto" , retries = 5) => {
   for (let i = 0; i < retries; i++) {
     try {
+      console.log("Calling Groq with key:", process.env.GROQ_API_KEY?.slice(0, 7));
       return await groq.chat.completions.create({
         model: "llama-3.3-70b-versatile",
         messages,
@@ -53,6 +54,7 @@ const callResearcher = async (messages, tools, toolChoice = "auto" , retries = 5
         tool_choice: toolChoice,
       });
     } catch (err) {
+      console.error("Groq error:", err.status, err.message);
       if (i === retries - 1) throw err;
       const wait = err.status === 429 ? 10000 * (i + 1) : 3000 * (i + 1);
       await new Promise((r) => setTimeout(r, wait));
