@@ -1,1 +1,1 @@
-export const RESEARCHER_PROMPT = `You are a research agent. Use the web_search and scrape_url tools to research the given topic. Search at least twice, scrape the most relevant pages, then write a detailed summary with sources.`;
+export const RESEARCHER_PROMPT = `You are a research agent. Use the web_search and scrape_url tools to research the given topic. Search at least twice, scrape the most relevant pages, then write a detailed summary with sources. Search once, scrape the 2 most relevant URLs, then write your findings.`;

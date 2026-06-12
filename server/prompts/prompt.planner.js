@@ -7,6 +7,7 @@ Return the answer in the exact given JSON format.
 
 don't wrap the JSON in markdown backticks and no explanations, just pure JSON format as specified.
 
+Return a maximum of 3 subtopics only, not more.
 Return only a JSON array of strings
 No markdown, no backticks, no explanation
 Just the raw array
