@@ -49,7 +49,7 @@ export default function App(){
     }}>
       <div style={{ marginBottom: 32 }}>
         <h1 style={{ fontSize: 22, fontWeight: 500, marginBottom: 6 }}>
-          Research agent
+          Multi-Agent Research Assistant
         </h1>
         <p style={{ fontSize: 14, color: "#888", lineHeight: 1.5 }}>
           Ask anything. The agent searches, reads pages, and writes a report.
