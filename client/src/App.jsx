@@ -10,7 +10,7 @@ export default function App(){
     if(!query.trim() || running) return;
     setEvents([]);
     setRunning(true);
-
+    
     const res = await fetch(`${import.meta.env.VITE_API_URL}/query`,{
       method:"POST",
       headers:{"Content-Type" : "application/json"},
